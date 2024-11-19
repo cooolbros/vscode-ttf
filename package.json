@@ -4,6 +4,7 @@
     "version": "0.0.1",
     "license": "MIT",
     "publisher": "pfwobcke",
+    "icon": "icon.png",
     "main": "./apps/extension/dist/extension.js",
     "browser": "./apps/extension/dist/extension.js",
     "repository": {
