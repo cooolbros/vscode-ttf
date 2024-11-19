@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "verbatimModuleSyntax": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS",
+            "types": [
+                "node"
+            ],
+            "verbatimModuleSyntax": false
+        }
+    }
+}

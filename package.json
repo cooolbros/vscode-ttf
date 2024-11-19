@@ -1,0 +1,40 @@
+{
+    "name": "vscode-ttf",
+    "displayName": "VSCode TTF",
+    "version": "0.0.1",
+    "license": "MIT",
+    "publisher": "pfwobcke",
+    "main": "./apps/extension/dist/extension.js",
+    "browser": "./apps/extension/dist/extension.js",
+    "repository": "github:cooolbros/vscode-ttf",
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "contributes": {
+        "customEditors": [
+            {
+                "viewType": "vscode-ttf.TTFEditor",
+                "displayName": "TTF Editor",
+                "selector": [
+                    {
+                        "filenamePattern": "*.ttf"
+                    }
+                ]
+            }
+        ]
+    },
+    "scripts": {
+        "dev": "turbo dev",
+        "build": "turbo build",
+        "package": "vsce package --no-dependencies"
+    },
+    "devDependencies": {
+        "@vscode/vsce": "^3.2.1",
+        "ts-loader": "^9.5.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.3",
+        "webpack": "^5.96.1",
+        "webpack-cli": "^5.1.4"
+    },
+    "packageManager": "pnpm@9.13.2"
+}
