@@ -6,7 +6,10 @@
     "publisher": "pfwobcke",
     "main": "./apps/extension/dist/extension.js",
     "browser": "./apps/extension/dist/extension.js",
-    "repository": "github:cooolbros/vscode-ttf",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cooolbros/vscode-ttf"
+    },
     "engines": {
         "vscode": "^1.95.0"
     },
