@@ -31,7 +31,8 @@
     "scripts": {
         "dev": "turbo dev",
         "build": "turbo build",
-        "package": "vsce package --no-dependencies"
+        "package": "vsce package --no-dependencies",
+        "vscode:prepublish": "pnpm build"
     },
     "devDependencies": {
         "@vscode/vsce": "^3.2.1",
