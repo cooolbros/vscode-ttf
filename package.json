@@ -41,12 +41,12 @@
         "vscode:prepublish": "pnpm build"
     },
     "devDependencies": {
-        "@vscode/vsce": "^3.2.1",
-        "ts-loader": "^9.5.1",
+        "@vscode/vsce": "^3.2.2",
+        "ts-loader": "^9.5.2",
         "ts-node": "^10.9.2",
-        "typescript": "^5.6.3",
-        "webpack": "^5.96.1",
-        "webpack-cli": "^5.1.4"
+        "typescript": "^5.8.2",
+        "webpack": "^5.98.0",
+        "webpack-cli": "^6.0.1"
     },
     "packageManager": "pnpm@9.13.2"
 }
