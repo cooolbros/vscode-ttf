@@ -1,3 +1,14 @@
+.github
+.gitignore
 .vscode
 **/.turbo
 **/node_modules
+**/svelte.config.js
+**/tsconfig.json
+**/vite.config.ts
+**/webpack.config.ts
+apps/**/package.json
+apps/**/src/**
+apps/ttf-editor/index.html
+pnpm-*.yaml
+turbo.json
