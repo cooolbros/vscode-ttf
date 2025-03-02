@@ -10,3 +10,5 @@
 Github: https://github.com/cooolbros/vscode-ttf
 
 VS Marketplace: https://marketplace.visualstudio.com/items?itemName=pfwobcke.vscode-ttf
+
+Open VSX Registry: https://open-vsx.org/extension/pfwobcke/vscode-ttf
