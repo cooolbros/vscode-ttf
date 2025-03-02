@@ -48,5 +48,8 @@
         "webpack": "^5.98.0",
         "webpack-cli": "^6.0.1"
     },
+    "vsce": {
+        "dependencies": false
+    },
     "packageManager": "pnpm@10.5.2"
 }
