@@ -12,8 +12,8 @@
         "ttf"
     ],
     "icon": "icon.png",
-    "main": "./apps/extension/dist/extension.js",
-    "browser": "./apps/extension/dist/extension.js",
+    "main": "./dist/extension.js",
+    "browser": "./dist/extension.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/cooolbros/vscode-ttf"
@@ -35,16 +35,19 @@
         ]
     },
     "scripts": {
-        "dev": "turbo dev",
-        "build": "turbo build",
+        "dev": "webpack --watch --mode none",
+        "build": "webpack",
         "package": "vsce package --no-dependencies",
         "vscode:prepublish": "pnpm build"
     },
     "devDependencies": {
+        "@types/vscode": "^1.98.0",
         "@vscode/vsce": "^3.2.2",
+        "dedent": "^1.5.3",
+        "svelte": "^5.23.0",
+        "svelte-loader": "^3.2.4",
         "ts-loader": "^9.5.2",
         "ts-node": "^10.9.2",
-        "turbo": "^2.4.4",
         "typescript": "^5.8.2",
         "webpack": "^5.98.0",
         "webpack-cli": "^6.0.1"

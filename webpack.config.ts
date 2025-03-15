@@ -1,4 +1,5 @@
 import { join } from "path"
+import type { CompileOptions } from "svelte/compiler"
 import type { Configuration } from "webpack"
 
 export default {
@@ -25,6 +26,17 @@ export default {
 					loader: "ts-loader",
 					options: {
 						onlyCompileBundledFiles: true
+					}
+				}
+			},
+			{
+				test: /\.svelte$/,
+				use: {
+					loader: "svelte-loader",
+					options: {
+						compilerOptions: {
+							generate: "server"
+						} as CompileOptions
 					}
 				}
 			}
