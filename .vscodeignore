@@ -1,8 +1,9 @@
 .github
 .gitignore
 .vscode
-node_modules
+/index.html
 pnpm-*.yaml
 src/**
+svelte.config.js
 tsconfig.json
-webpack.config.ts
+vite.config.ts

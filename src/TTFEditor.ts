@@ -1,10 +1,9 @@
-import dedent from "dedent"
-import { render } from "svelte/server"
-import { Disposable, RelativePattern, Uri, workspace, type CancellationToken, type CustomDocumentOpenContext, type CustomReadonlyEditorProvider, type WebviewPanel } from "vscode"
-import App from "./App.svelte"
+import { RelativePattern, Uri, workspace, type CancellationToken, type CustomDocumentOpenContext, type CustomReadonlyEditorProvider, type Disposable, type ExtensionContext, type WebviewPanel } from "vscode"
 import { TTFDocument } from "./TTFDocument"
 
 export class TTFEditor implements CustomReadonlyEditorProvider<TTFDocument> {
+
+	constructor(private readonly context: ExtensionContext) { }
 
 	public async openCustomDocument(uri: Uri, openContext: CustomDocumentOpenContext, token: CancellationToken): Promise<TTFDocument> {
 		return new TTFDocument(uri, await workspace.fs.readFile(uri))
@@ -19,18 +18,29 @@ export class TTFEditor implements CustomReadonlyEditorProvider<TTFDocument> {
 			disposable.dispose()
 		}
 
+		const dist = Uri.joinPath(this.context.extensionUri, "dist/client")
+
 		const [basename, ...rest] = document.uri.path.split("/").reverse()
 		const dirname = document.uri.with({ path: rest.reverse().join("/") })
 
 		webviewPanel.webview.options = {
-			localResourceRoots: [dirname]
+			enableScripts: true,
+			localResourceRoots: [dist, dirname]
 		}
 
-		const { head, body } = render(App, {
-			props: {
-				ttf: document.ttf
+		const html = new TextDecoder("utf-8")
+			.decode(await workspace.fs.readFile(Uri.joinPath(dist, "index.html")))
+			.replace("%BASE%", `${webviewPanel.webview.asWebviewUri(dist).toString()}/`)
+			.replace("%FONTFAMILY%", document.ttf.fontFamily)
+
+		const style = `
+			<style>
+			@font-face {
+				font-family: "${document.ttf.fontFamily}";
+				src: url("${webviewPanel.webview.asWebviewUri(document.uri)}");
 			}
-		})
+			</style>
+		`
 
 		let version = 0
 		update()
@@ -45,25 +55,7 @@ export class TTFEditor implements CustomReadonlyEditorProvider<TTFDocument> {
 		}), dispose)
 
 		function update() {
-			webviewPanel.webview.html = dedent`
-			<!DOCTYPE html>
-			<html lang="en">
-				<head>
-					<meta charset="UTF-8">
-					<meta name="viewport" content="width=device-width, initial-scale=1.0">
-					<!-- version: ${version++} -->
-					<style>
-					@font-face {
-						font-family: "${document.ttf.fontFamily}";
-						src: url("${webviewPanel.webview.asWebviewUri(document.uri)}");
-					}
-					</style>
-					${head}
-				</head>
-				<body>
-					${body}
-				</body>
-			</html>`
+			webviewPanel.webview.html = html.replace("<!--app-head-->", style + `<!-- version: ${version++} -->`)
 		}
 	}
 }
