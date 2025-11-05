@@ -2,7 +2,7 @@
     "name": "vscode-ttf",
     "displayName": "VSCode TTF",
     "description": "TrueType font viewer for VSCode",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "license": "MIT",
     "publisher": "pfwobcke",
     "categories": [
