@@ -18,7 +18,7 @@ export class TTFEditor implements CustomReadonlyEditorProvider<TTFDocument> {
 			disposable.dispose()
 		}
 
-		const dist = Uri.joinPath(this.context.extensionUri, "dist/client")
+		const dist = Uri.joinPath(this.context.extensionUri, "apps/ttf-editor/dist")
 
 		const [basename, ...rest] = document.uri.path.split("/").reverse()
 		const dirname = document.uri.with({ path: rest.reverse().join("/") })

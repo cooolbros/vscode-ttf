@@ -12,8 +12,8 @@
         "ttf"
     ],
     "icon": "icon.png",
-    "main": "./dist/extension/extension.js",
-    "browser": "./dist/extension/extension.js",
+    "main": "./apps/extension/dist/extension.js",
+    "browser": "./apps/extension/dist/extension.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/cooolbros/vscode-ttf"
@@ -35,22 +35,18 @@
         ]
     },
     "scripts": {
-        "build": "pnpm build:client && pnpm build:extension",
-        "build:client": "vite build --outDir dist/client",
-        "build:extension": "vite build --ssr src/extension.ts --outDir dist/extension",
+        "dev": "turbo dev",
+        "build": "turbo build",
+        "browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
         "vscode:prepublish": "pnpm build"
     },
     "devDependencies": {
-        "@sveltejs/vite-plugin-svelte": "^6.2.1",
-        "@types/vscode": "^1.105.0",
-        "@types/vscode-webview": "^1.57.5",
-        "svelte": "^5.43.3",
-        "typescript": "^5.9.3",
-        "vite": "^7.1.12"
+        "@vscode/test-web": "^0.0.74",
+        "turbo": "^2.6.0",
+        "typescript": "^5.9.3"
     },
     "vsce": {
         "dependencies": false
     },
-    "type": "module",
     "packageManager": "pnpm@10.20.0"
 }
