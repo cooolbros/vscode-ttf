@@ -4,3 +4,4 @@ packages:
 
 onlyBuiltDependencies:
   - '@playwright/browser-chromium'
+  - esbuild
