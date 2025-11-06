@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.1.1]
+ - Fix extension activation failing in VSCode Web
+
 ## [1.1.0]
  - Reload font when file changes on disk
  - Add custom message text input
