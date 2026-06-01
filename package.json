@@ -48,5 +48,5 @@
     "vsce": {
         "dependencies": false
     },
-    "packageManager": "pnpm@10.20.0"
+    "packageManager": "pnpm@11.5.0"
 }

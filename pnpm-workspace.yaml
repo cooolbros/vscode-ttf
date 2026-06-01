@@ -1,7 +1,10 @@
+engineStrict: true
+preferWorkspacePackages: true
+
 packages:
   - 'apps/*'
   - 'packages/*'
 
-onlyBuiltDependencies:
-  - '@playwright/browser-chromium'
-  - esbuild
+allowBuilds:
+  '@playwright/browser-chromium': true
+  esbuild: true
