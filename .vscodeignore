@@ -3,10 +3,10 @@
 .vscode
 **/.turbo
 **/node_modules
+**/rspack.config.mts
 **/svelte.config.js
 **/tsconfig.json
 **/vite.config.ts
-**/webpack.config.ts
 apps/**/package.json
 apps/**/src/**
 apps/ttf-editor/index.html
