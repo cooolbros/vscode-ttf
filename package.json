@@ -42,7 +42,7 @@
     },
     "devDependencies": {
         "@vscode/test-web": "^0.0.74",
-        "turbo": "^2.6.0",
+        "turbo": "^2.9.16",
         "typescript": "^5.9.3"
     },
     "vsce": {
