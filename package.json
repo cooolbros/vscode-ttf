@@ -41,7 +41,7 @@
         "vscode:prepublish": "pnpm build"
     },
     "devDependencies": {
-        "@vscode/test-web": "^0.0.74",
+        "@vscode/test-web": "^0.0.80",
         "turbo": "^2.9.16",
         "typescript": "^5.9.3"
     },
