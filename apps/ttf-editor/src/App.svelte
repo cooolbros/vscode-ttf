@@ -68,11 +68,11 @@
 		gap: 1rem;
 		margin-left: 0.25rem;
 
-		& div.size {
+		div.size {
 			font-size: 14px;
 		}
 
-		& div.message {
+		div.message {
 			font-family: var(--font-family);
 			font-size: var(--font-size);
 			white-space: nowrap;
