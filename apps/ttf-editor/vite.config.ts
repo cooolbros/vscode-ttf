@@ -5,7 +5,7 @@ export default defineConfig({
 	plugins: [svelte()],
 	base: "",
 	build: {
-		target: "ESNext",
+		target: "esnext",
 		rollupOptions: {
 			external: ["vscode"]
 		}
