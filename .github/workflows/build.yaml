@@ -12,6 +12,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: latest
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
       - run: pnpm install
       - run: pnpm build
